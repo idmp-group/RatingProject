@@ -21,14 +21,13 @@ namespace DataLayer.Model
         [Display(Name = "رمزعبور")]
         public string Password { get; set; }
 
-        [EmailAddress(ErrorMessage = "ایمیل وارد شده نامعتبر است")]
+        //[EmailAddress(ErrorMessage = "ایمیل وارد شده نامعتبر است")]
         [Display(Name = "ایمیل")]
         public string Email { get; set; }
         [StringLength(11, MinimumLength = 3, ErrorMessage = "شماره باید بین 3 تا 50 کاراکتر باشد")]
         [Display(Name = "شماره فروشگاه")]
         public string Phonenumber { get; set; }
-        [Display(Name = "مدیر سایت")]
-        public bool Status { get; set; }
+        
 
 
         public virtual Store Store { get; set; }

@@ -1,0 +1,552 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/favicon.png">
+    <!-- Bootstrap CSS -->
+    @*<link rel="stylesheet" href="~/Content/bootstrap.min.css">*@
+    <link href="~/Content/bootstrap.rtl.min.css" rel="stylesheet" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/Content/animate.min.css">
+    <!-- Font-awesome CSS-->
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <!-- Owl Caousel CSS -->
+    <link rel="stylesheet" href="~/vendor/OwlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendor/OwlCarousel/owl.theme.default.min.css">
+    <!-- Main Menu CSS -->
+    <link rel="stylesheet" href="~/Content/meanmenu.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="~/Content/select2.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/magnific-popup.css">
+    <!-- Custom CSS -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <!--Angular js-->
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/AngularScripts/Module.js"></script>
+    <script src="~/Scripts/AngularScripts/Service.js"></script>
+    <script src="~/Scripts/AngularScripts/Controller.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController">
+        <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <!-- Add your site or application content here -->
+        <!-- Preloader Start Here -->
+        <div id="preloader"></div>
+        <!-- Preloader End Here -->
+        <div id="wrapper">
+            <!-- Header Area Start Here -->
+            <header>
+                <div id="header-three" class="header-style1 header-fixed">
+                    <div class="header-top-bar top-bar-style1">
+                        <div class="container">
+                            <div class="row no-gutters">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-8">
+                                    <div class="top-bar-left">
+                                        @*<a href="post-ad.html" class="cp-default-btn d-lg-none">Post Your Ad</a>*@
+                                        <p class="d-none d-lg-block">
+                                            <i class="fa fa-life-ring" aria-hidden="true"></i>سلام به سایت خوش  آمدید
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-4">
+                                    <div class="top-bar-right">
+                                        <ul>
+                                            <li>
+                                                <button type="button" class="login-btn" data-toggle="modal" data-target="#LoginModal">
+                                                    <i class="fa fa-lock" aria-hidden="true"></i>ورود
+                                                </button>
+                                            </li>
+                                            <li class="hidden-mb">
+                                                <button type="button" class="login-btn" data-toggle="modal" data-target="#StoreSignupModal">
+                                                    <i class="fa fa-comments-o" aria-hidden="true"></i>ثبت فروشگاه
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-menu-area bg-primary" id="sticker">
+                        <div class="container">
+                            <div class="row no-gutters d-flex align-items-center">
+                                <div class="col-lg-2 col-md-2 col-sm-3">
+                                    <div class="logo-area">
+                                        <a href="index.html" class="img-fluid">
+                                            <img src="~/Images/logo.png" alt="logo">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-6 possition-static">
+                                    <div class="cp-main-menu">
+                                        <nav>
+                                            <ul>
+
+                                                <li><a href="/">صفحه اصلی</a></li>
+                                                <li><a href="/Home/AboutService">درباره سرویس</a></li>
+                                                <li><a href="/Home/AboutUs">درباره ما</a></li>
+                                                <li><a href="/Home/ContactUs">تماس با ما</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                @*<div class="col-lg-2 col-md-2 col-sm-3 text-right">
+                                    <a href="post-ad.html" class="cp-default-btn">Post Your Ad</a>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area Start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Home</a>
+                                                <ul>
+                                                    <li><a href="index.html">Home 1</a></li>
+                                                    <li><a href="index2.html">Home 2</a></li>
+                                                    <li><a href="index3.html">Home 3</a></li>
+                                                    <li><a href="index4.html">Home 4</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about.html">Who We Are</a></li>
+                                            <li><a href="how-it-works.html">How It Works?</a></li>
+                                            <li>
+                                                <a href="#">Pages</a>
+                                                <ul>
+                                                    <li><a href="pricing.html">Pricing Plan</a></li>
+                                                    <li><a href="category-grid-layout1.html">Grid View 1</a></li>
+                                                    <li><a href="category-grid-layout2.html">Grid View 2</a></li>
+                                                    <li><a href="category-grid-layout3.html">Grid View 3</a></li>
+                                                    <li><a href="category-list-layout1.html">List View 1</a></li>
+                                                    <li><a href="category-list-layout2.html">List View 2</a></li>
+                                                    <li><a href="category-list-layout3.html">List View 3</a></li>
+                                                    <li><a href="single-product-layout1.html">Product Details 1</a></li>
+                                                    <li><a href="single-product-layout2.html">Product Details 2</a></li>
+                                                    <li><a href="single-product-layout3.html">Product Details 3</a></li>
+                                                    <li><a href="favourite-ad-list.html">Favourite Ad</a></li>
+                                                    <li><a href="login.html">Login</a></li>
+                                                    <li><a href="my-account.html">My Account</a></li>
+                                                    <li><a href="post-ad.html">Post Ad</a></li>
+                                                    <li><a href="report-abuse.html" data-toggle="modal" data-target="#report_abuse">Report Abuse</a></li>
+                                                    <li><a href="faq.html">Faq</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="category-grid-layout1.html">Features</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area End -->
+            </header>
+            <!-- Header Area End Here -->
+            
+            @RenderSection("DisplaySearchBox",false)
+            @RenderBody()
+            <!-- Footer Area Start Here -->
+            <footer>
+                <div class="footer-area-top s-space-equal">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="footer-box">
+                                    <h3 class="title-medium-light title-bar-left size-lg">About us</h3>
+                                    <ul class="useful-link">
+                                        <li>
+                                            <a href="about.html">About us</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Career</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Terms &amp; Conditions</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sitemap</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="footer-box">
+                                    <h3 class="title-medium-light title-bar-left size-lg">How to sell fast</h3>
+                                    <ul class="useful-link">
+                                        <li>
+                                            <a href="#">How to sell fast</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Buy Now on Classipost</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Membership</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Banner Advertising</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Promote your ad</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="footer-box">
+                                    <h3 class="title-medium-light title-bar-left size-lg">Help &amp; Support</h3>
+                                    <ul class="useful-link">
+                                        <li>
+                                            <a href="#">Live Chat</a>
+                                        </li>
+                                        <li>
+                                            <a href="faq.html">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Stay safe on classipost</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="footer-box">
+                                    <h3 class="title-medium-light title-bar-left size-lg">Follow Us On</h3>
+                                    <ul class="folow-us">
+                                        <li>
+                                            <a href="#">
+                                                <img src="~/Images/footer/follow1.jpg" alt="follow">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="~/Images/footer/follow2.jpg" alt="follow">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="social-link">
+                                        <li class="fa-classipost">
+                                            <a href="#">
+                                                <img src="~/Images/footer/facebook.jpg" alt="social">
+                                            </a>
+                                        </li>
+                                        <li class="tw-classipost">
+                                            <a href="#">
+                                                <img src="~/Images/footer/twitter.jpg" alt="social">
+                                            </a>
+                                        </li>
+                                        <li class="yo-classipost">
+                                            <a href="#">
+                                                <img src="~/Images/footer/youtube.jpg" alt="social">
+                                            </a>
+                                        </li>
+                                        <li class="pi-classipost">
+                                            <a href="#">
+                                                <img src="~/Images/footer/pinterest.jpg" alt="social">
+                                            </a>
+                                        </li>
+                                        <li class="li-classipost">
+                                            <a href="#">
+                                                <img src="~/Images/footer/linkedin.jpg" alt="social">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-area-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 text-center-mb">
+                                <p>Copyright © classipost</p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 text-left text-center-mb">
+                                <ul>
+                                    <li>
+                                        <img src="~/Images/footer/card1.jpg" alt="card">
+                                    </li>
+                                    <li>
+                                        <img src="~/Images/footer/card2.jpg" alt="card">
+                                    </li>
+                                    <li>
+                                        <img src="~/Images/footer/card3.jpg" alt="card">
+                                    </li>
+                                    <li>
+                                        <img src="~/Images/footer/card4.jpg" alt="card">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer Area End Here -->
+        </div>
+        <!-- Modal Start-->
+        <div class="modal fade" id="LoginModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="title-default-bold mb-none">ورود</div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login-form">
+                            <form>
+                                <label>نام کاربری</label>
+                                <input type="text" ng-model="loginUsername" placeholder="نام کاربری" />
+                                <label>رمز عبور *</label>
+                                <input type="password" ng-model="loginPassword" placeholder="رمز عبور" />
+                                <div class="checkbox checkbox-primary">
+                                    <input ng-model="rememberme" type="checkbox">
+                                    <label for="rememberme">مرا به خاطر بسپار</label>
+                                </div>
+                                <button class="default-big-btn" type="submit" value="Login" ng-click="OwnerLogin()">ورود</button>
+                                <button class="default-big-btn form-cancel" type="submit" value="">انصراف</button>
+                                <label class="lost-password"><a href="#">رمز عبور خود را فراموش کرده اید؟</a></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End-->
+        <!-- Modal Store Signup Start-->
+        <div class="modal fade" id="StoreSignupModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="title-default-bold mb-none">ثبت فروشگاه</div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login-form">
+                            <form id="login-page-form">
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="first-name">نام <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="FirstName" class="form-control" placeholder="نام ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="LastName">نام خانوادگی <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="LastName" class="form-control" placeholder="نام خانوادگی">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Phonenumber">شماره همراه <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Phonenumber" class="form-control" placeholder="شماره همراه">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Email">ایمیل <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Email" class="form-control" placeholder="ایمیل . . .">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Username">نام کاربری <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Username" class="form-control" placeholder="نام کاربری">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Password">رمز عبور <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Password" class="form-control" placeholder="رمز عبور">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Store-->
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Name"> نام فروشگاه <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Name" class="form-control" placeholder="نام فروشگاه ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Name"> دسته <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <select class="form-control" ng-model="selectedCat" ng-options="cat as cat.label for cat in categories"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="Address">آدرس فروشگاه <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="Address" class="form-control" placeholder="آدرس فروشگاه">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="StorePhoneNumber">شماره فروشگاه <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="StorePhoneNumber" class="form-control" placeholder="شماره فروشگاه">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label">توضیحات <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <textarea placeholder="در مورد فروشگاه بنویسید" class="textarea form-control" ng-model="Description" rows="4" cols="20" data-error="Message field is required" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3 col-12">
+                                        <label class="control-label" for="StoreEmail">ایمیل فروشگاه <span>*</span></label>
+                                    </div>
+                                    <div class="col-sm-9 col-12">
+                                        <div class="form-group">
+                                            <input type="text" ng-model="StoreEmail" class="form-control" placeholder="ایمیل فروشگاه . . .">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<input type="hidden" ng-model="Date" value="@DateTime.Now.Date.ToString()" />*@
+                                <div class="row">
+                                    <div class="ml-auto col-sm-9 col-12 ml-none--mb">
+                                        <div class="form-group">
+                                            <button type="submit" class="cp-default-btn-sm" ng-click="CreateStoreOwner()">ثبت</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Store Signup End-->
+        <!-- Report Abuse Modal Start-->
+        <div class="modal fade" id="report_abuse" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content report-abuse-area radius-none">
+                    <div class="gradient-wrapper">
+                        <div class="gradient-title">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="item-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>There's Something Wrong With This Ads?</h2>
+                        </div>
+                        <div class="gradient-padding reduce-padding">
+                            <form id="report-abuse-form">
+                                <div class="form-group">
+                                    <label class="control-label" for="first-name">Your E-mail</label>
+                                    <input type="text" id="first-name" class="form-control" placeholder="Type your mail here ...">
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="control-label" for="first-name">Your Reason</label>
+                                        <textarea placeholder="Type your reason..." class="textarea form-control" name="message" id="form-message" rows="7" cols="20" data-error="Message field is required" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="cp-default-btn-sm">Submit Now!</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Report Abuse Modal End-->
+    </div>
+        <!-- jquery-->
+        <script src="~/Scripts/jquery-2.2.4.min.js "></script>
+        <!-- Popper js -->
+        <script src="~/Scripts/popper.js"></script>
+        <!-- Bootstrap js -->
+        @*<script src="~/Scripts/bootstrap.min.js "></script>*@
+        <script src="~/Scripts/bootstrap.rtl.min.js"></script>
+        <!-- Owl Cauosel JS -->
+        <script src="~/vendor/OwlCarousel/owl.carousel.min.js "></script>
+        <!-- Meanmenu Js -->
+        <script src="~/Scripts/jquery.meanmenu.min.js "></script>
+        <!-- Srollup js -->
+        <script src="~/Scripts/jquery.scrollUp.min.js "></script>
+        <!-- jquery.counterup js -->
+        <script src="~/Scripts/jquery.counterup.min.js"></script>
+        <script src="~/Scripts/waypoints.min.js"></script>
+        <!-- Select2 Js -->
+        <script src="~/Scripts/select2.min.js"></script>
+        <!-- Isotope js -->
+        <script src="~/Scripts/isotope.pkgd.min.js "></script>
+        <!-- Magnific Popup -->
+        <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+        <!-- Google Map js -->
+        @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtmXSwv4YmAKtcZyyad9W7D4AC08z0Rb4"></script>*@
+        <!-- Custom Js -->
+        <script src="~/Scripts/main.js "></script>
+    
+</body>
+
+</html>

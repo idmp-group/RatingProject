@@ -22,6 +22,9 @@ namespace DataLayer.Model
         [StringLength(11, MinimumLength = 3, ErrorMessage = "شماره اشتباه است ")]
         [Display(Name = "شماره")]
         public string Phonenumber { get; set; }
+        //Admin = true
+        [Display(Name = "مدیر سایت")]
+        public bool Type { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

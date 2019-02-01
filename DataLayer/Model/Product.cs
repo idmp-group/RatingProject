@@ -6,7 +6,7 @@ namespace DataLayer.Model
 {
     public class Product
     {
-        public int Id { get; set; }
+        
         [Key]
         [Display(Name = "کد محصول")]
         public int Code { get; set; }
@@ -16,15 +16,16 @@ namespace DataLayer.Model
         [StringLength(100, MinimumLength = 3, ErrorMessage = "توضیحات باید بین 3 تا 50 کاراکتر باشد")]
         [Display(Name = "توضیحات")]
         public string Description { get; set; }
-        [Display(Name = "تاریخ")]
+        [Display(Name = "تاریخ ثبت")]
         public string Date { get; set; }
         [ForeignKey("Category")]
         [Display(Name = "دسته بندی")]
         public int CategoryCode { get; set; }
+        [Display(Name = "فروشگاه")]
         [ForeignKey("Store")]
-        public int StoreCode { get; set; }
+        public int? StoreCode { get; set; }
         public virtual Store Store { get; set; }
-        public virtual Gallery Image { get; set; }
+        public virtual ICollection<Gallery> Images { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         

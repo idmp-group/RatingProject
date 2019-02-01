@@ -35,15 +35,15 @@ namespace DataLayer.Model
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             //one to one relations
-            modelBuilder.Entity<Product>()
-                .HasOptional(s => s.Image) // Mark Address property optional in Student entity
-                .WithRequired(g => g.Product); // mark Student property as required in StudentAddress entity. Cannot save StudentAddress without Student
-            modelBuilder.Entity<Store>()
-                .HasOptional(s => s.Image)
-                .WithRequired(g => g.Store);
-            modelBuilder.Entity<Service>()
-                .HasOptional(s => s.Image)
-                .WithRequired(g => g.Service);
+            //modelBuilder.Entity<Product>()
+            //    .HasOptional(s => s.Image) // Mark Address property optional in Student entity
+            //    .WithRequired(g => g.Product); // mark Student property as required in StudentAddress entity. Cannot save StudentAddress without Student
+            //modelBuilder.Entity<Store>()
+            //    .HasOptional(s => s.Image)
+            //    .WithRequired(g => g.Store);
+            //modelBuilder.Entity<Service>()
+            //    .HasOptional(s => s.Image)
+            //    .WithRequired(g => g.Service);
 
             //
             //modelBuilder.Entity<Comment>()

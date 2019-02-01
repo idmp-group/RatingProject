@@ -5,6 +5,7 @@ namespace DataLayer.Model
 {
     public class Gallery
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
         [StringLength(100, MinimumLength = 3, ErrorMessage = "عنوان باید بین 3 تا 50 کاراکتر باشد")]
@@ -20,13 +21,21 @@ namespace DataLayer.Model
         
         [Display(Name = "تاریخ")]
         public string Date { get; set; }
+        [Display(Name = "نوع")]
         // Gallery=t |Slider=f
         public bool? Status { get; set; }
-        
+        [Display(Name = "فروشگاه")]
+        [ForeignKey("Store")]
+        public int? StoreCode { get; set; }
+        [Display(Name = "محصول")]
+        [ForeignKey("Product")]
+        public int? ProductCode { get; set; }
+        [Display(Name = "خدمت")]
+        [ForeignKey("Service")]
+        public int? ServiceCode { get; set; }
         public virtual Store Store { get; set; }
         public virtual Product Product { get; set; }
         public virtual Service Service { get; set; }
-        
 
     }
 }
