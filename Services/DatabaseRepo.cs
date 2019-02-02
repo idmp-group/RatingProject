@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Services
+namespace Services
 {
     public class DatabaseRepo<TEntity> where TEntity : class
     {
@@ -48,26 +48,14 @@ namespace DataLayer.Services
 
         public void Create(TEntity newRecord)
         {
-            //Product productDTO = new Product();
 
-            //var code = new Random();
-            //Product product = new Product()
-            //{
-            //    ID = -1,
-            //    Code = productDTO.Code,
-            //    CategoryCode = productDTO.Code,
-            //    Comments = productDTO.Comments,
-            //    Date = productDTO.Date,
-            //    Description = productDTO.Description,
-            //    CreateDate = DateTime.Now,
 
-            //};
 
-            //using (var db = new EF())
-            //{
-            //    db.Set<Product>().Add(product);
-            //    db.SaveChanges();
-            //}
+            using (var db = new EF())
+            {
+                db.Set<TEntity>().Add(newRecord);
+                db.SaveChanges();
+            }
 
             myDbSet.Add(newRecord);
         }

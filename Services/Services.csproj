@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9E46CCF-EAA9-4A75-A5DF-B2786FB23C39}</ProjectGuid>
+    <ProjectGuid>{0BAC39D7-0931-4C27-8B34-867D59599102}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataLayer</RootNamespace>
-    <AssemblyName>DataLayer</AssemblyName>
+    <RootNamespace>Services</RootNamespace>
+    <AssemblyName>Services</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,8 +39,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,27 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\EntityBase.cs" />
-    <Compile Include="IDataBase.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Category.cs" />
-    <Compile Include="Model\Comment.cs" />
-    <Compile Include="Model\EF.cs" />
-    <Compile Include="Model\Gallery.cs" />
-    <Compile Include="Model\Owner.cs" />
-    <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\Service.cs" />
-    <Compile Include="Model\Store.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="DatabaseRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DatabaseRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{a9e46ccf-eaa9-4a75-a5df-b2786fb23c39}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{cd051eed-f0a7-4125-82f8-f4cba99462ec}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PDC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

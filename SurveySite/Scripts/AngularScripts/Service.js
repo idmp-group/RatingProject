@@ -5,12 +5,12 @@ app.service("myService", function ($http) {
     };
 
     this.CreateStoreOwner = function (storeRecord) {
+        console.log(storeRecord);
         return $http({
             method: "POST",
-            url: "/Home/CreateStoreOwner",
+            url: "/api/Store/CreateStoreOwner",
             //params: {ownerRecord, storeRecord},
-            data: JSON.stringify({ storeRecord}),
-            dataType: "json"
+            data: storeRecord,
         });
     };
     this.OwnerLogin = function (username,password,rememberme) {

@@ -5,48 +5,55 @@ app.controller("myController", function ($scope, myService) {
         return Math.floor((Math.random() * 1000) + 10);
     }
     //Generate Categories list for signup store form
-    function PopulateCategories() {
-        var result = myService.PopulateCategories();
+    //function PopulateCategories() {
+    //    var result = myService.PopulateCategories();
 
-        result.then(
-            function (categories) {
-                $scope.categories = [];
-                angular.forEach(categories.data, function (item) {
-                    $scope.categories.push({ value:item.Code,label:item.Name });
-                });
-                // you don't need another scope variable
-                //$scope.categories = categories.data;
-            }
-            , function () {
-                alert("Error Getting Data");
-            });
-    }
-    PopulateCategories();
+    //    result.then(
+    //        function (categories) {
+    //            $scope.categories = [];
+    //            angular.forEach(categories.data, function (item) {
+    //                $scope.categories.push({ value:item.Code,label:item.Name });
+    //            });
+    //            // you don't need another scope variable
+    //            //$scope.categories = categories.data;
+    //        }
+    //        , function () {
+    //            alert("Error Getting Data");
+    //        });
+    //}
+    //PopulateCategories();
     //Search store
-    $scope.Search = function () {
-        keyword = $scope.keyword;
-        category = $scope.selectedCat;
-        city = $scope.city;
-        var result = myService.Search(keyword, category, city);
-        result.then(function (store) {
-            if (store.data!="false") {
-                
-                $scope.storeImages = store.data.Images;
-                $scope.storeName = store.data.Name;
-                $scope.storeDescription = store.data.Description;
-                $scope.storeAddress = store.data.Address;
-                $scope.storeEmail = store.data.Email;
-            }
-            else {
-                alert("Sorry, something was wrong :(");
-            }
-        }, function () {
-            alert("Sorry, something was wrong :(");
-        });
-        // }
+    //$scope.Search = function () {
+    //    keyword = $scope.keyword;
+    //    category = $scope.selectedCat;
+    //    city = $scope.city;
+    //    var result = myService.Search(keyword, category, city);
+    //    result.then(function (store) {
+    //        if (store.data!="false") {
+    //            //Images
+    //            $scope.storeImages = store.data.Images;
+    //            //Store
+    //            $scope.storeName = store.data.Name;
+    //            $scope.storeDescription = store.data.Description;
+    //            $scope.storeAddress = store.data.Address;
+    //            $scope.storeEmail = store.data.Email;
+    //            $scope.storePhoneumber = store.data.Phonenumber;
+    //            //Owner
+    //            $scope.ownerName = store.data.Owner.FirstName + " " + store.data.Owner.LastName;
+    //            //Category
+    //            $scope.categoryName = store.data.Category.Name;
+
+    //        }
+    //        else {
+    //            alert("Sorry, something was wrong :(");
+    //        }
+    //    }, function () {
+    //        alert("Sorry, something was wrong :(");
+    //    });
+    //    // }
        
 
-    };
+    //};
 
     //Signup Store and Owner
     $scope.CreateStoreOwner = function () {
@@ -68,14 +75,14 @@ app.controller("myController", function ($scope, myService) {
         storeRecord.Phonenumber = $scope.StorePhoneNumber;
         storeRecord.Latitude = 10;
         storeRecord.Longitude = 10;
-        storeRecord.CategoryCode = $scope.selectedCat.value;
+        storeRecord.CategoryCode = 1;
         storeRecord.Owner = ownerRecord;
         var result = myService.CreateStoreOwner(storeRecord);
         result.then(function () {
             alert("true");
         }, function () {
             alert("false");
-        })
+        });
     };
     //Owner Login
     $scope.OwnerLogin = function () {

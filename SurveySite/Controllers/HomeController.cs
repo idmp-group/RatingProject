@@ -1,5 +1,5 @@
-﻿using DataLayer.Model;
-using DataLayer.Services;
+﻿using Models;
+using Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ namespace SurveySite.Controllers
 {
     public class HomeController : Controller
     {
-        DatabaseRepo<Owner> ownerTable = new DatabaseRepo<Owner>();
-        DatabaseRepo<Store> StoreTable = new DatabaseRepo<Store>();
-        DatabaseRepo<Category> CategoryTable = new DatabaseRepo<Category>();
+        //DatabaseRepo<Owner> ownerTable = new DatabaseRepo<Owner>();
+        //DatabaseRepo<StoreDTO> StoreTable = new DatabaseRepo<StoreDTO>();
+        //DatabaseRepo<Category> CategoryTable = new DatabaseRepo<Category>();
         // GET: Home
         public ActionResult Index()
         {
@@ -25,51 +25,51 @@ namespace SurveySite.Controllers
         //{
         //    return Json();
         //}
-        [HttpPost]
-        public JsonResult CreateStoreOwner(Store storeRecord)
-        {
-            PersianCalendar ps = new PersianCalendar();
-            //int rn = RandomNumber(1000, 2000);
-            //if (!StoreTable.FindRecord(item => item.StoreCode == rn))
-            //{
-            //    storeRecord.StoreCode = rn;
-            //}
-            //else
-            //{
-            //    storeRecord.StoreCode = RandomNumber(1000, 2000);
-            //}
-            storeRecord.Date = ps.GetYear(DateTime.Now) + "/" + ps.GetMonth(DateTime.Now) + "/" + ps.GetDayOfMonth(DateTime.Now).ToString();
-            //storeRecord.Owner.StoreCode = storeRecord.StoreCode;
-            if (ModelState.IsValid)
-            {
-                StoreTable.Create(storeRecord);
-                return Json(StoreTable.Save(), JsonRequestBehavior.AllowGet);
-            }
-            return Json(false, JsonRequestBehavior.AllowGet);
-        }
-        public JsonResult PopulateCategories()
-        {
-            var categories = CategoryTable.Read();
-            return Json(categories, JsonRequestBehavior.AllowGet);
-        }
-        public ContentResult Search(string keyword, string category, string city)
-        {
-            var storeCode = Convert.ToInt32(keyword);
-            if (StoreTable.FindRecord(item => item.Name == keyword||item.StoreCode== storeCode))
-            {
-                var list = JsonConvert.SerializeObject(StoreTable.Read(item => item.Name == keyword|| item.StoreCode== storeCode, "Images"),
-                Formatting.None,
-                new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-                    });
-                return Content(list, "application/json");
-            }
-            else
-            {
-                return Content("false", "application/json");
-            }
-        }
+        //[HttpPost]
+        //public JsonResult CreateStoreOwner(Store storeRecord)
+        //{
+        //    PersianCalendar ps = new PersianCalendar();
+        //    //int rn = RandomNumber(1000, 2000);
+        //    //if (!StoreTable.FindRecord(item => item.StoreCode == rn))
+        //    //{
+        //    //    storeRecord.StoreCode = rn;
+        //    //}
+        //    //else
+        //    //{
+        //    //    storeRecord.StoreCode = RandomNumber(1000, 2000);
+        //    //}
+        //    storeRecord.Date = ps.GetYear(DateTime.Now) + "/" + ps.GetMonth(DateTime.Now) + "/" + ps.GetDayOfMonth(DateTime.Now).ToString();
+        //    //storeRecord.Owner.StoreCode = storeRecord.StoreCode;
+        //    if (ModelState.IsValid)
+        //    {
+        //        StoreTable.Create(storeRecord);
+        //        return Json(StoreTable.Save(), JsonRequestBehavior.AllowGet);
+        //    }
+        //    return Json(false, JsonRequestBehavior.AllowGet);
+        //}
+        //public JsonResult PopulateCategories()
+        //{
+        //    var categories = CategoryTable.Read();
+        //    return Json(categories, JsonRequestBehavior.AllowGet);
+        //}
+        //public ContentResult Search(string keyword, string category, string city)
+        //{
+        //    var storeCode = Convert.ToInt32(keyword);
+        //    if (StoreTable.FindRecord(item => item.Name == keyword||item.StoreCode== storeCode))
+        //    {
+        //        var list = JsonConvert.SerializeObject(StoreTable.Read(item => item.Name == keyword|| item.StoreCode== storeCode, "Images,Owner,Category"),
+        //        Formatting.None,
+        //        new JsonSerializerSettings()
+        //            {
+        //                ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        //            });
+        //        return Content(list, "application/json");
+        //    }
+        //    else
+        //    {
+        //        return Content("false", "application/json");
+        //    }
+        //}
         public ActionResult AboutService()
         {
             return View();
